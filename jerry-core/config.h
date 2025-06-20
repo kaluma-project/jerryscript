@@ -93,7 +93,7 @@
 #endif /* !defined (JERRY_BUILTIN_PROXY) */
 
 #ifndef JERRY_BUILTIN_REALMS
-#define JERRY_BUILTIN_REALMS JERRY_BUILTINS
+#define JERRY_BUILTIN_REALMS 0 // JERRY_BUILTINS // Disable it for Kaluma project
 #endif /* !defined (JERRY_BUILTIN_REALMS) */
 
 #ifndef JERRY_BUILTIN_REFLECT
