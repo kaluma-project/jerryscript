@@ -78,14 +78,14 @@ ecma_finalize (void)
   ecma_finalize_global_environment ();
   uint8_t runs = 0;
 
-  do
+  while (JERRY_CONTEXT (ecma_gc_new_objects) != 0)
   {
     ecma_gc_run ();
     if (++runs >= JERRY_GC_LOOP_LIMIT)
     {
       jerry_fatal (JERRY_FATAL_UNTERMINATED_GC_LOOPS);
     }
-  } while (JERRY_CONTEXT (ecma_gc_new_objects) != 0);
+  }
 
   jmem_cpointer_t *global_symbols_cp = JERRY_CONTEXT (global_symbols_cp);
 
